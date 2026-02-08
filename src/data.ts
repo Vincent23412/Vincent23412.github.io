@@ -1,149 +1,186 @@
 export const projects = [
   {
-    title: "Project Alpha",
-    description: "A short description of what this project does and why it matters.",
-    techStack: ["React", "TypeScript", "Vite"],
-    demoUrl: "https://example.com",
-    githubUrl: "https://github.com/username/project-alpha"
+    title: "Sim Life RPG",
+    description:
+      "A simulation RPG project focused on system design, data flow, and extensible gameplay logic.",
+    techStack: ["AWS", "CloudFormation", "Lambda", "Bedrock"],
+    githubUrl: "https://github.com/aws-educate-tw/aws-educate-bedrock-workshop"
   },
   {
-    title: "Project Beta",
-    description: "Another project with a clear value proposition and results.",
-    techStack: ["Node.js", "PostgreSQL", "Docker"],
-    demoUrl: "https://example.com",
-    githubUrl: "https://github.com/username/project-beta"
+    title: "Mindecho",
+    description:
+      "An AI-enabled service for content understanding, data processing, and insight generation.",
+    techStack: ["Docker", "CI/CD", "Express"],
+    githubUrl: "https://github.com/Vincent23412/mindecho_backend"
   },
   {
-    title: "Project Gamma",
-    description: "An experimental or learning-focused project with interesting outcomes.",
-    techStack: ["Python", "FastAPI", "CI/CD"],
-    demoUrl: "https://example.com",
-    githubUrl: "https://github.com/username/project-gamma"
+    title: "TPET Mail System",
+    description:
+      "A serverless email system that reduces operational load and improves delivery reliability.",
+    techStack: ["Terraform", "AWS", "Lambda"],
+    githubUrl: "https://github.com/aws-educate-tw/aws-educate-tpet-backend"
+  },
+  {
+    title: "Linux Odyssey (Open Source)",
+    description:
+      "Open-source exploration of Linux tooling and automation patterns for systems engineering.",
+    techStack: ["Linux", "Container", "Express"],
+    githubUrl: "https://github.com/Vincent23412/linux-odyssey"
+  },
+  {
+    title: "Kubernetes Failure Pattern Operator",
+    description:
+      "A Kubernetes operator for simulating and studying failure patterns in distributed systems.",
+    techStack: ["Kubernetes", "Go", "Operator"],
+    githubUrl: "https://github.com/Vincent23412/failure-pattern-operator"
   }
 ];
 
 export const profile = {
   name: "Vincent Chen",
-  title: "Computer Science Student",
-  subtitle: "Cloud × Distributed Systems Enthusiast",
-  tagline: "Hi there! 👋 I'm Vincent",
+  title: "NCCU CS Master's Student",
+  subtitle: "Backend × Cloud",
+  tagline: "HI THERE! 👋 I'M VINCENT",
   intro:
-    "I’m passionate about bridging theory and practice in Artificial Intelligence and Cloud Computing, with a strong focus on building practical, scalable systems that solve real-world problems.",
+    "I’m a master’s student in Computer Science at National Chengchi University. Through coursework and multiple projects, I’ve built a strong foundation in backend development, data processing, and system architecture. I’m proficient in Node.js and TypeScript, and have delivered end-to-end backend services with Express and Prisma. In data engineering, I’ve designed ETL pipelines, performed data cleaning, and optimized processing workflows. Recently, I’ve expanded into cloud infrastructure and distributed systems, with hands-on experience in Docker, Kubernetes, and Linux. I also build concurrent, scalable backend modules in Go.",
   highlights: [
-    "Cloud-native & Kubernetes-based AI solutions",
-    "Distributed systems & platform-level engineering",
-    "Designing reliable, observable, and safe automation systems"
+    "Backend engineering, cloud architecture, and high-performance system design",
+    "Go, Kubernetes, cloud, and systems development",
+    "Building reliable, observable, and horizontally scalable systems"
   ],
   certifications: [
     {
-      name: "AWS Certified Solutions Architect – Associate (SAA)",
-      detail: "Focus on scalable, highly available, and cost-efficient cloud architectures"
+      name: "AWS Certified Cloud Practitioner (CP)",
+      detail: "Foundational understanding of AWS services and cloud concepts",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
     },
     {
-      name: "AWS Certified Cloud Practitioner (CP)",
-      detail: "Foundational understanding of AWS services and cloud concepts"
+      name: "AWS AI Foundations (AIF)",
+      detail: "Core concepts of AI and ML on AWS",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+    },
+    {
+      name: "AWS Certified Solutions Architect – Associate (SAA)",
+      detail: "Designing scalable, highly available, and cost-efficient AWS architectures",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
     }
   ],
   contact: {
-    email: "hello@example.com",
+    email: "asd1111zxcv@gmail.com",
     githubUrl: "https://github.com/Vincent23412",
     githubLabel: "@Vincent23412",
-    linkedinUrl: "https://www.linkedin.com/in/your-linkedin",
+    linkedinUrl: "https://www.linkedin.com/in/敬翰-陳-15b727233",
     linkedinLabel: "敬翰 陳 | Vincent Chen"
   }
 };
 
 export const skills = {
-  "Programming Languages": [
-    "Go — Backend systems, Kubernetes controllers, cloud-native services",
-    "Node.js / JavaScript — API development, tooling",
-    "Python — AI, scripting, and automation"
+  Programming: [
+    {
+      label: "Node.js",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+    },
+    {
+      label: "Python",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+    },
+    {
+      label: "Go",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg"
+    }
   ],
-  "Cloud, DevOps & Containers": [
-    "AWS — Cloud infrastructure & services",
-    "Docker — Containerization",
-    "Kubernetes — Orchestration, Operators, cloud-native patterns",
-    "GitHub Actions — CI/CD automation"
+  Frameworks: [
+    {
+      label: "Express",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+    },
+    {
+      label: "FastAPI",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"
+    }
   ],
-  "Databases & Caching": [
-    "PostgreSQL — Relational database design",
-    "Redis — Caching & fast data access"
+  Databases: [
+    {
+      label: "MongoDB",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+    },
+    {
+      label: "PostgreSQL",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+    }
   ],
-  Certifications: [
-    "AWS Certified Solutions Architect – Associate (SAA)",
-    "AWS Certified Cloud Practitioner (CP)"
+  Cloud: [
+    {
+      label: "AWS",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+    }
+  ],
+  "CI/CD": [
+    {
+      label: "GitHub Actions",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg"
+    }
+  ],
+  Containers: [
+    {
+      label: "Docker",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+    },
+    {
+      label: "Kubernetes",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
+    }
   ]
 };
 
 export const experiences = [
   {
-    period: "Jul 2022 – Aug 2022",
-    title: "Overseas Internship Program",
-    org: "University of New Mexico",
-    location: "New Mexico, America",
-    summary:
-      "Participated in LEWIS project, designed high-efficiency wireless smart sensors at low cost, and taught local children to assemble Arduino sensors.",
-    type: "globe"
-  },
-  {
-    period: "Jun 2019 - Sep 2023",
-    title: "Bachelor, National Taiwan University",
-    org: "National Taiwan University",
+    period: "Mar 2023 - Jan 2024",
+    title: "Backend R&D Intern",
+    org: "Futurenest Inc.",
     location: "Taipei, Taiwan",
     summary:
-      "Double majored in mechanical engineering and bioenvironmental systems engineering.",
-    type: "education"
+      "Tested AI product accuracy, optimized code for performance, improved ETL pipelines, implemented backend modules, and supported internal tooling.",
+    type: "work"
   },
   {
-    period: "Sep 2023 - Present",
-    title: "Master, National Taiwan University",
-    org: "National Taiwan University",
+    period: "Sep 2025 - Present",
+    title: "Master, National Chengchi University",
+    org: "Graduate Institute of Computer Science",
     location: "Taipei, Taiwan",
-    summary: "Major in mechanical engineering, focused on generative AI and RAG.",
+    summary:
+      "Focused on cloud architecture, distributed systems, Kubernetes networking, and scheduling.",
     type: "education"
-  },
-  {
-    period: "Feb 2024 - Jun 2024",
-    title: "AI Application Service Intern",
-    org: "Chunghwa Telecom",
-    location: "Taiwan",
-    summary:
-      "Researched prompt engineering with DSPy and improved RAG accuracy by integrating Knowledge Graphs with Neo4j and LangChain.",
-    type: "ai"
-  },
-  {
-    period: "Jul 2024 - Oct 2024",
-    title: "Cloud Engineer Intern",
-    org: "eCloudvalley",
-    location: "Taiwan",
-    summary:
-      "Deployed MediaTek DaVinci scripts and MVP2 platform using IaC tools, optimizing infrastructure with automated deployment.",
-    type: "cloud"
-  },
-  {
-    period: "Mar 2024 - Nov 2024",
-    title: "6th AWS Educate Ambassador Technical Support",
-    org: "Amazon Web Services",
-    location: "Taiwan",
-    summary:
-      "Developed an interactive Pokemon web app using AWS services and launched a psychological test on AWS, attracting 7,000+ users in 17 days.",
-    type: "aws"
-  },
-  {
-    period: "Jan 2025 - Aug 2025",
-    title: "7th AWS Educate Ambassador Technical Support",
-    org: "Amazon Web Services",
-    location: "Taiwan",
-    summary:
-      "Built a serverless email system (TPET) for about $15, reducing workload by up to 80%.",
-    type: "aws"
   },
   {
     period: "Oct 2025 - Present",
-    title: "Software Engineer",
-    org: "Trend Micro",
+    title: "AWS Educate TECH Campus Ambassador",
+    org: "AWS Educate",
     location: "Taiwan",
-    summary: "Developing and maintaining Deep Discovery Email Inspection.",
+    summary:
+      "Hosted workshops, researched and applied new technologies for product development, executed ETL workflows, and maintained databases.",
+    type: "aws"
+  },
+  {
+    period: "Nov 2025 - Present",
+    title: "Mindecho App Team Lead",
+    org: "Mindecho",
+    location: "Taiwan",
+    summary:
+      "Leading the app team, coordinating development, and driving feature delivery.",
     type: "work"
+  }
+];
+
+export const awards = [
+  {
+    title: "Taipei Hackathon Semi-Finalist",
+    date: "Apr 2025",
+    summary: "Advanced to the semi-finals"
+  },
+  {
+    title: "Google Jam",
+    date: "May 2025",
+    summary: "3rd place"
   }
 ];

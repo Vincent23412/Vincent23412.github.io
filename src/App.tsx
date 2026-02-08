@@ -1,11 +1,14 @@
 import { useEffect, useMemo, useState } from "react";
-import { experiences, profile, projects, skills } from "./data";
+import { awards, experiences, profile, projects, skills } from "./data";
+import profilePhoto from "./assets/photo.jpg";
 
 const navItems = [
   { id: "about", label: "About" },
   { id: "projects", label: "Projects" },
   { id: "skills", label: "Skills" },
   { id: "experience", label: "Experience" },
+  { id: "certifications", label: "Certifications" },
+  { id: "awards", label: "Awards" },
   { id: "contact", label: "Contact" }
 ];
 
@@ -81,7 +84,7 @@ function renderTimelineIcon(type: string) {
 
 function App() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
-  const [submitted, setSubmitted] = useState(false);
+  const [typedSubtitle, setTypedSubtitle] = useState("");
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -105,12 +108,26 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
-  const year = useMemo(() => new Date().getFullYear(), []);
+  const fullSubtitle = useMemo(
+    () => (profile.subtitle ? `${profile.title} · ${profile.subtitle}` : profile.title),
+    []
+  );
+
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      index += 1;
+      setTypedSubtitle(fullSubtitle.slice(0, index));
+      if (index >= fullSubtitle.length) {
+        clearInterval(interval);
+      }
+    }, 45);
+    return () => clearInterval(interval);
+  }, [fullSubtitle]);
 
   return (
     <div className="page">
       <header className="navbar">
-        <div className="brand">YOUR NAME</div>
         <nav className="nav-links">
           {navItems.map((item) => (
             <a key={item.id} href={`#${item.id}`}>
@@ -130,21 +147,15 @@ function App() {
       <main>
         <section id="about" className="section hero reveal">
           <div className="hero-left">
-            <div className="avatar" aria-hidden="true">
-              <span>V</span>
+            <div className="avatar">
+              <img src={profilePhoto} alt="Vincent Chen" />
             </div>
             <div className="hero-text">
               <p className="eyebrow">{profile.tagline}</p>
               <h1>{profile.name}</h1>
-              <p className="subhead">
-                {profile.title} · {profile.subtitle}
+              <p className="subhead typewriter" aria-label={fullSubtitle}>
+                {typedSubtitle}
               </p>
-              <p className="lead">{profile.intro}</p>
-              <ul className="highlights">
-                {profile.highlights.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
             </div>
           </div>
         </section>
@@ -152,7 +163,6 @@ function App() {
         <section id="projects" className="section reveal">
           <div className="section-head">
             <h2>Projects</h2>
-            <p>以下是近期完成的重點作品，點擊 Demo 或 GitHub 查看。</p>
           </div>
           <div className="card-grid">
             {projects.map((project) => (
@@ -169,9 +179,6 @@ function App() {
                   </div>
                 </div>
                 <div className="card-links">
-                  <a href={project.demoUrl} target="_blank" rel="noreferrer">
-                    Demo
-                  </a>
                   <a href={project.githubUrl} target="_blank" rel="noreferrer">
                     GitHub
                   </a>
@@ -184,17 +191,17 @@ function App() {
         <section id="skills" className="section reveal">
           <div className="section-head">
             <h2>Skills</h2>
-            <p>以分類方式整理，方便快速掃描我的技術光譜。</p>
           </div>
           <div className="skills-grid">
             {Object.entries(skills).map(([group, items]) => (
               <div key={group} className="skill-group">
                 <h3>{group}</h3>
-                <div className="tag-row">
+                <div className="skill-items">
                   {items.map((item) => (
-                    <span key={item} className="tag">
-                      {item}
-                    </span>
+                    <div key={item.label} className="skill-item">
+                      <img src={item.icon} alt="" loading="lazy" />
+                      <span>{item.label}</span>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -205,12 +212,14 @@ function App() {
         <section id="certifications" className="section reveal">
           <div className="section-head">
             <h2>Certifications</h2>
-            <p>專注於雲端架構與系統工程的專業認證。</p>
           </div>
           <div className="cert-grid">
             {profile.certifications.map((cert) => (
               <article key={cert.name} className="cert-card">
-                <h3>{cert.name}</h3>
+                <div className="cert-header">
+                  <img src={cert.icon} alt="" loading="lazy" />
+                  <h3>{cert.name}</h3>
+                </div>
                 <p>{cert.detail}</p>
               </article>
             ))}
@@ -220,11 +229,11 @@ function App() {
         <section id="experience" className="section reveal">
           <div className="section-head">
             <h2>Experience</h2>
-            <p>時間軸方式呈現學校、實習與專案里程碑。</p>
           </div>
           <div className="timeline-grid">
             {experiences.map((item) => (
               <article key={item.title} className="timeline-card">
+                <div className="timeline-date-col">{item.period}</div>
                 <div className="timeline-icon">{renderTimelineIcon(item.type)}</div>
                 <div className="timeline-content">
                   <h3 className="timeline-title">{item.title}</h3>
@@ -234,8 +243,24 @@ function App() {
                     <span>{item.location}</span>
                   </div>
                   <p className="timeline-summary">{item.summary}</p>
-                  <span className="timeline-date">{item.period}</span>
                 </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="awards" className="section reveal">
+          <div className="section-head">
+            <h2>Awards</h2>
+          </div>
+          <div className="card-grid">
+            {awards.map((award) => (
+              <article key={award.title} className="card">
+                <div>
+                  <h3>{award.title}</h3>
+                  <p>{award.summary}</p>
+                </div>
+                <div className="timeline-date">{award.date}</div>
               </article>
             ))}
           </div>
@@ -244,7 +269,6 @@ function App() {
         <section id="contact" className="section reveal">
           <div className="section-head">
             <h2>Contact</h2>
-            <p>Feel free to reach out if you'd like to chat about Cloud, Distributed Systems, or collaboration.</p>
           </div>
           <div className="contact-grid">
             <div className="contact-info">
@@ -265,33 +289,10 @@ function App() {
                 </a>
               </div>
             </div>
-            <form
-              className="contact-form"
-              onSubmit={(event) => {
-                event.preventDefault();
-                setSubmitted(true);
-              }}
-            >
-              <label>
-                Name
-                <input type="text" placeholder="Your name" required />
-              </label>
-              <label>
-                Email
-                <input type="email" placeholder="you@email.com" required />
-              </label>
-              <label>
-                Message
-                <textarea placeholder="Tell me about your idea" rows={4} required />
-              </label>
-              <button type="submit">Send Message</button>
-              {submitted && <p className="form-success">已成功送出！我會盡快回覆。</p>}
-            </form>
           </div>
         </section>
       </main>
 
-      <footer className="footer">© {year} YOUR NAME. All rights reserved.</footer>
     </div>
   );
 }
