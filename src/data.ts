@@ -41,13 +41,8 @@ export const profile = {
   title: "NCCU CS Master's Student",
   subtitle: "Backend × Cloud",
   tagline: "HI THERE! 👋 I'M VINCENT",
-  intro:
-    "I’m a master’s student in Computer Science at National Chengchi University. Through coursework and multiple projects, I’ve built a strong foundation in backend development, data processing, and system architecture. I’m proficient in Node.js and TypeScript, and have delivered end-to-end backend services with Express and Prisma. In data engineering, I’ve designed ETL pipelines, performed data cleaning, and optimized processing workflows. Recently, I’ve expanded into cloud infrastructure and distributed systems, with hands-on experience in Docker, Kubernetes, and Linux. I also build concurrent, scalable backend modules in Go.",
-  highlights: [
-    "Backend engineering, cloud architecture, and high-performance system design",
-    "Go, Kubernetes, cloud, and systems development",
-    "Building reliable, observable, and horizontally scalable systems"
-  ],
+  summary:
+    "I’m a master’s student in Computer Science at National Chengchi University, focused on backend development, data processing, and system architecture. I build end-to-end services with Node.js/TypeScript (Express, Prisma), design ETL pipelines, and optimize data workflows. Recently I’ve expanded into cloud infrastructure and distributed systems with Docker, Kubernetes, and Linux, and I build scalable, concurrent backend modules in Go.",
   certifications: [
     {
       name: "AWS Certified Cloud Practitioner (CP)",

@@ -191,6 +191,7 @@ a {
   margin-bottom: 12px;
 }
 
+
 .typewriter {
   display: inline-block;
   white-space: nowrap;
@@ -260,6 +261,15 @@ a {
   gap: 16px;
   box-shadow: var(--shadow);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-placeholder {
+  min-height: 180px;
+  color: var(--muted);
+  display: grid;
+  gap: 12px;
+  font-style: normal;
+  line-height: 1.7;
 }
 
 .card:hover {

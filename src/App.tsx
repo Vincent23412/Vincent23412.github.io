@@ -160,6 +160,31 @@ function App() {
           </div>
         </section>
 
+        <section id="about-me" className="section reveal">
+          <div className="section-head">
+            <h2>About Me</h2>
+          </div>
+          <div className="card-grid">
+            <article className="card about-placeholder">
+              <p>
+                I’m a master’s student in Computer Science at National Chengchi University, focused
+                on backend development and system architecture. I build end-to-end services with
+                Node.js/TypeScript (Express, Prisma) and have experience designing ETL pipelines.
+              </p>
+              <p>
+                In recent projects and research, I’ve expanded into cloud infrastructure and
+                distributed systems, working with AWS, Docker, Kubernetes, and Linux, and building
+                scalable concurrent modules in Go. I previously interned at the AI startup
+                Futurenest, improving backend modules and internal tools.
+              </p>
+              <p>
+                I’m passionate about backend engineering, cloud architecture, and building reliable,
+                observable, and horizontally scalable systems.
+              </p>
+            </article>
+          </div>
+        </section>
+
         <section id="projects" className="section reveal">
           <div className="section-head">
             <h2>Projects</h2>
