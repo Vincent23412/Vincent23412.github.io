@@ -4,10 +4,11 @@ import profilePhoto from "./assets/photo.jpg";
 
 const navItems = [
   { id: "about", label: "About" },
+  { id: "about-me", label: "About Me" },
   { id: "projects", label: "Projects" },
   { id: "skills", label: "Skills" },
-  { id: "experience", label: "Experience" },
   { id: "certifications", label: "Certifications" },
+  { id: "experience", label: "Experience" },
   { id: "awards", label: "Awards" },
   { id: "contact", label: "Contact" }
 ];
